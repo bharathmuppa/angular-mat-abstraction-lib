@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "mc-material-extension": {
+      "root": "projects/mc-material-extension",
+      "sourceRoot": "projects/mc-material-extension/src",
+      "projectType": "library",
+      "prefix": "mc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mc-material-extension/tsconfig.lib.json",
+            "project": "projects/mc-material-extension/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mc-material-extension/src/test.ts",
+            "tsConfig": "projects/mc-material-extension/tsconfig.spec.json",
+            "karmaConfig": "projects/mc-material-extension/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mc-material-extension/tsconfig.lib.json",
+              "projects/mc-material-extension/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "asml-material-extension"

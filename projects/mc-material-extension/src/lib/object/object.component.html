@@ -1,0 +1,9 @@
+<div *ngIf="direction==='row'" fxLayout="row">
+  <label class="label">{{ key }}</label>
+  <span class="asml--margin-right-s"> {{ key && key.indexOf(':')===-1 ? (delimiter||':') : '' }}  </span>
+  <span [ngStyle]="{'color': (color? color : 'black')}" class="">{{ value }}</span>
+</div>
+<div *ngIf="direction==='column'" fxLayout="column">
+  <label class="label">{{ key }}</label>
+  <span [ngStyle]="{'color': (color? color : 'black')}" class="asml--margin-left-s">{{ value }}</span>
+</div>

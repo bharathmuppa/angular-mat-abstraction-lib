@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+
+    <label class="label" [ngClass]="{'asml-icon--error-red':(control?.touched && control?.invalid)}" fxFlex>
+      {{ controlConfiguration?.placeholder }}
+      <span
+        [ngClass]="{'asml-icon--error-red': (control?.touched && control?.errors?.required)}"
+        *ngIf="hasValidator()">*</span>
+    </label>
+
+  <mat-form-field fxFlex floatPlaceholder="never">
+    <span matPrefix>&euro;</span>
+    <input matInput mcDecimalEnforcer type="text"
+           [formControl]="control" [required]="hasValidator()"/>
+    <mat-error *ngIf="control?.errors?.maxlength">{{ controlConfiguration?.placeholder }} should be less than or equal
+      to
+      {{ control?.errors?.maxlength?.requiredLength }} characters
+    </mat-error>
+    <mat-error *ngIf="control?.errors?.required">{{ controlConfiguration?.placeholder }} is required</mat-error>
+    <mat-icon class="tooltip" matSuffix
+              *ngIf="controlConfiguration?.help"
+              [matTooltip]="controlConfiguration?.help"
+              matTooltipPosition="before">
+      help_outline
+    </mat-icon>
+  </mat-form-field>
+</div>
+
+

@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "mc-material-extension": [
+        "dist/mc-material-extension"
+      ],
+      "mc-material-extension/*": [
+        "dist/mc-material-extension/*"
+      ]
+    }
   }
 }
